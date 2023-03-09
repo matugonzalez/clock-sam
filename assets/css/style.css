@@ -1,0 +1,117 @@
+:root
+{
+    --hue:350;
+    --color1:hsla(var(--hue),90%,50%);
+    --color2:hsla(var(--hue),90%,50%);
+    --body-bg:hsla(var(--hue),50%,90%);
+    --container-bg-color: hsla(var(--hue),60%,70%);
+    --clock-color: hsla(var(--hue),100%,99%);
+    --clock-hands-color: hsla(var(--hue),,);
+}
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    background-color: var(--body-bg);
+}
+.container
+{
+    position: relative;
+    width: 500px;
+    height: 500px;
+    background-color: var(--container-bg-color);
+    display: grid;
+    place-items: center;
+    border-radius: 15px;
+}
+.clock
+{
+    width: 400px;
+    height: 400px;
+    border: 5px solid var(--clock-color);
+    border-radius: 50%;
+    display: grid;
+    align-items: center;
+    background-color: black;
+    box-shadow: 0em 0em 5em var(--color2);
+}
+.hand
+{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0);
+    background-color: var(--clock-color);
+    transform: rotate(270deg);
+    transform-origin: 0%; 
+    border-top-right-radius: 70%;
+    border-bottom-right-radius: 70%;
+    transition: all 0.05s;
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+    box-shadow: 0em 0em 0.2em var(--clock-color);
+}
+.hour-hand
+{
+    width: 100px;
+    height: 10px;
+    
+}
+.minute-hand
+{
+    width: 150px;
+    height: 8px;
+}
+.second-hand
+{
+    width: 190px;
+    height: 5px;
+}
+.cap
+{
+    width: 10px;
+    height: 10px;
+    background-color: var(--clock-color);
+    position: absolute;
+    left: 50%;
+    transform: translate(-50% ,0);
+    border-radius: 50%;
+}
+
+.numbers
+{
+    position: absolute;
+    color: var(--clock-color);
+    font-size: 2.5em;
+    text-shadow: 0em 0em 0.2em var(--clock-color);
+    font-family: 'Lucida Sans';
+}
+.twelve
+{
+    left: 50%;
+    top: 5%;
+    transform: translate(-50%, -50%);
+}
+.three
+{
+    left: 95%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.six
+{
+    left: 50%;
+    top: 95%;
+    transform: translate(-50%, -50%);
+}
+.nine
+{
+    left: 5%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
